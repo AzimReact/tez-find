@@ -1,19 +1,19 @@
 import { Card } from "antd";
-// const { Meta } = Card;
+import { useNavigate } from "react-router-dom";
+
 const MyCard = ({ title, image, defaultImage }) => {
-  // const url =
-  //   iphone.image ||
-  //   "https://asiastore.kg/image/cache/catalog/iphone/iphone14/iphone14/purple/wwen_iphone14_q422_purple_pdp_image_position-1a-670x540.jpg";
+  const navigate = useNavigate()
+
   return (
     <Card
       hoverable
       style={{
         width: 240,
       }}
+      onClick={() => navigate(title)}
       cover={<img alt="example" src={image || defaultImage} />}
     >
       <h3>{title}</h3>
-      {/* <Meta title={iphone.title} description={iphone.price} /> */}
     </Card>
   );
 };

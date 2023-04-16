@@ -1,15 +1,26 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import { Provider } from 'react-redux';
-import { store } from './store';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import App from "./pages/App";
+import { Provider } from "react-redux";
+import { store } from "./store";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { Iphone } from "./pages/Iphone";
 
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <App />,
+  },
+  {
+    path: "/:iphoneType",
+    element: <Iphone />
+  }
+]);
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <Provider store={store}>
-    <App />
+    <RouterProvider router={router} />
   </Provider>
 );
-

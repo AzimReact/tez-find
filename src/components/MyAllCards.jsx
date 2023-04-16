@@ -1,16 +1,16 @@
 import React from "react";
 import MyCard from "./MyCard";
 import { Layout, Space } from "antd";
+const { Content } = Layout;
+const contentStyle = {
+  textAlign: "center",
+  minHeight: "95vh",
+  lineHeight: "120px",
+  color: "#fff",
+  backgroundColor: "#108ee9",
+};
 
 export default function MyAllCards({ searchedIphones }) {
-  const { Content } = Layout;
-  const contentStyle = {
-    textAlign: "center",
-    minHeight: "95vh",
-    lineHeight: "120px",
-    color: "#fff",
-    backgroundColor: "#108ee9",
-  };
   return (
     <Content style={contentStyle}>
       <div className="all-cards">
@@ -23,9 +23,9 @@ export default function MyAllCards({ searchedIphones }) {
         >
           {searchedIphones.length > 0 ? (
             <div className="cards">
-              {searchedIphones.map((iphone, i) => (
+              {searchedIphones.map((iphone) => (
                 <MyCard
-                  key={i}
+                  key={iphone.model}
                   title={iphone.model}
                   image={iphone.image}
                   defaultImage="https://asiastore.kg/image/cache/catalog/iphone/iphone14/iphone14/purple/wwen_iphone14_q422_purple_pdp_image_position-1a-670x540.jpg"
@@ -33,7 +33,10 @@ export default function MyAllCards({ searchedIphones }) {
               ))}
             </div>
           ) : (
-            <h1>Найди свой айфон iphone по лучшей цене в городе!</h1>
+            <>
+              <h1>Найди свой айфон iphone по лучшей цене в городе!</h1>
+              <h4>Loading...</h4>
+            </>
           )}
         </Space>
       </div>
