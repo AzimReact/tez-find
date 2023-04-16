@@ -3,7 +3,7 @@ import { iphoneReducer } from './iphonesReducer';
 
 
 const rootReducer = combineReducers({
-    iphones: iphoneReducer
+    allIphones: iphoneReducer
 })
 
 export const store = createStore(rootReducer)
@@ -31,3 +31,11 @@ export const store = createStore(rootReducer)
 //       localStorage.setItem({iphones, time}) // Json.stringify!!!
 //     }
 //   }
+
+
+
+
+//Запросы
+      // for (const key in resp.data) {
+      //   allIphones = allIphones.concat(resp.data[key].map(el => ({ ...el, market: key })))
+      // }

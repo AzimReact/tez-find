@@ -1,6 +1,7 @@
 import React from "react";
 import { Input, Space } from "antd";
 import { Header as AntdHeader } from "antd/es/layout/layout";
+import { Link } from "react-router-dom";
 const { Search } = Input;
 
 export default function Header({ searchQuery, setSearchQuery }) {
@@ -18,7 +19,11 @@ export default function Header({ searchQuery, setSearchQuery }) {
   return (
     <AntdHeader style={headerStyle}>
       <div className="header">
-        <h2 style={{ cursor: "pointer" }}>TezFind</h2>
+        <h2>
+          <Link style={{ cursor: "pointer", color: "white" }} to="/">
+            TezFind
+          </Link>{" "}
+        </h2>
         <Space direction="vertical">
           <Search
             value={searchQuery}

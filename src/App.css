@@ -5,16 +5,28 @@
 }
 
 .all-cards {
-  margin: 20px 0;
+  margin-bottom: 30px;
 }
 
 .cards {
-  /* grid-template-columns: 1fr 1fr 1fr 1fr; */
-  /* display: grid;
-  grid-gap: 25px; */
+  /* grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  display: grid;
+  grid-gap: 30px;
+  justify-items: center; */
+
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   gap: 30px;
+}
+
+.iphoneModel {
+  display: flex;
+  justify-content: center;
+  gap: 150px;
+}
+
+.iphoneImage {
+  width: 300px;
 }
