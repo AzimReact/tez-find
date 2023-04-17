@@ -6,7 +6,7 @@ import { Layout } from "antd";
 import styles from "./styles.module.scss";
 import { Header, Footer } from "../../components/modules";
 
-// FIXME: This page under construction !!!
+// FIXME: This page under construction !!!!
 export const Iphone = () => {
   const storeIphones = useSelector((store) => store.iphones);
   const [color, setColor] = useState("");
