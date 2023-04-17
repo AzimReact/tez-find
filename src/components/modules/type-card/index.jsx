@@ -5,6 +5,7 @@ export const TypeCard = ({
   image,
   defaultImage,
   onClick: handleClick,
+  children
 }) => {
   return (
       <Card
@@ -13,6 +14,7 @@ export const TypeCard = ({
         cover={<img alt="" src={image || defaultImage} />}
       >
         <h3>{title}</h3>
+        {children}
       </Card>
   );
 };
