@@ -1,16 +1,16 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
-import App from "./pages/App";
+
 import { Provider } from "react-redux";
 import { store } from "./store";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import { Iphone } from "./pages/Iphone";
+import { Home, Iphone } from "./pages";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <App />,
+    element: <Home />,
   },
   {
     path: "/:iphoneType",

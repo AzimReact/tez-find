@@ -1,10 +1,10 @@
 import { Layout, Space } from "antd";
-import "./App.css";
-import MyAllCards from "../components/MyAllCards";
+import "./index.css";
+import MyAllCards from "../../components/MyAllCards";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useMemo } from "react";
-import Header from "../components/Header";
-import { getIphones } from "../store/actions";
+import Header from "../../components/Header";
+import { getIphones } from "../../store/actions";
 
 const { Footer } = Layout;
 
@@ -14,7 +14,7 @@ const footerStyle = {
   backgroundColor: "#7dbcea",
 };
 
-const App = () => {
+export const Home = () => {
   const storeIphones = useSelector((store) => ({ ...store.iphones }));
   const dispatch = useDispatch();
 
@@ -52,4 +52,3 @@ const App = () => {
   );
 };
 
-export default App;
