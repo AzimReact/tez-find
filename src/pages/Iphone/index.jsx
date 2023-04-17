@@ -6,7 +6,6 @@ export const Iphone = () => {
     const storeIphones = useSelector((store) => ({ ...store.iphones }));
     const { iphoneType } = useParams()
 
-    console.log(iphoneType, storeIphones)
     const iphones = useMemo(() => {
         const result = []
 

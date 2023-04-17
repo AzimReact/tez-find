@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useMemo } from "react";
 import { useNavigate } from "react-router-dom";
 
-import "./index.css";
+import styles from "./styles.module.scss";
 import { getIphones } from "../../store/actions";
 import { TypeCard, Header, Footer } from "../../components/modules";
 import { SimpleSpinner } from "../../components/ui";
@@ -47,8 +47,8 @@ export const Home = () => {
       <Layout>
         <Header />
 
-        <div className="all-cards">
-          <div className="cards">
+        <div className={styles['all-cards']}>
+          <div className={styles['cards']}>
             {iphoneTypes.map(({ typeKey, type, image }) => (
               <TypeCard
                 onClick={() => navigate(typeKey)}

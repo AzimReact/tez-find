@@ -1,7 +1,7 @@
 import React from "react";
 import { Input, Space } from "antd";
 import { Header as AntdHeader } from "antd/es/layout/layout";
-const { Search } = Input;
+import styles from "./styles.module.scss";
 
 const headerStyle = {
   textAlign: "center",
@@ -15,10 +15,10 @@ const headerStyle = {
 export const Header = ({ onSearch: handleSearch }) => {
   return (
     <AntdHeader style={headerStyle}>
-      <div className="header">
+      <div className={styles["header"]}>
         <h2>TezFind</h2>
         <Space direction="vertical">
-          <Search
+          <Input.Search
             placeholder="Введи свой телефон"
             allowClear
             enterButton="Найти"
