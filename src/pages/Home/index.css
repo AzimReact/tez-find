@@ -9,12 +9,17 @@
 }
 
 .cards {
-  /* grid-template-columns: 1fr 1fr 1fr 1fr; */
-  /* display: grid;
-  grid-gap: 25px; */
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   gap: 30px;
+}
+
+.cards > div {
+  width: 240px;
+  height: 360px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
 }

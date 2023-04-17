@@ -12,23 +12,18 @@ const headerStyle = {
   backgroundColor: "#7dbcea",
 };
 
-export default function Header({onSearch: handleSearch}) {
-  const onSearch = (value) => {
-    console.log(value);
-    if (handleSearch) handleSearch(value)
-  };
-  
+export const Header = ({ onSearch: handleSearch }) => {
   return (
     <AntdHeader style={headerStyle}>
       <div className="header">
-        <h2 style={{ cursor: "pointer" }}>TezFind</h2>
+        <h2>TezFind</h2>
         <Space direction="vertical">
           <Search
             placeholder="Введи свой телефон"
             allowClear
             enterButton="Найти"
             size="large"
-            onSearch={onSearch}
+            onSearch={handleSearch}
             style={{
               display: "flex",
               alignSelf: "center",
@@ -39,4 +34,4 @@ export default function Header({onSearch: handleSearch}) {
       </div>
     </AntdHeader>
   );
-}
+};

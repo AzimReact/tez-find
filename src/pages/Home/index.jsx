@@ -1,30 +1,29 @@
 import { Layout, Space } from "antd";
-import "./index.css";
-import MyAllCards from "../../components/MyAllCards";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useMemo } from "react";
-import Header from "../../components/Header";
+import { useNavigate } from "react-router-dom";
+
+import "./index.css";
 import { getIphones } from "../../store/actions";
-
-const { Footer } = Layout;
-
-const footerStyle = {
-  textAlign: "center",
-  color: "#fff",
-  backgroundColor: "#7dbcea",
-};
+import { TypeCard, Header, Footer } from "../../components/modules";
+import { SimpleSpinner } from "../../components/ui";
 
 export const Home = () => {
   const storeIphones = useSelector((store) => ({ ...store.iphones }));
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
-  const iphones = useMemo(() => {
+  const iphoneTypes = useMemo(() => {
     const result = [];
-    for (const key in storeIphones) {
+    for (const typeKey in storeIphones) {
+      let marketIphones = storeIphones[typeKey]["istore"]
+        ? storeIphones[typeKey]["istore"]
+        : storeIphones[typeKey]["asia-store"];
+
       result.push({
-        ...storeIphones[key],
-        model: key,
-        image: storeIphones[key]["asia-store"][0].image,
+        type: marketIphones.at(-1).type,
+        typeKey: typeKey,
+        image: marketIphones.at(-1).image,
       });
     }
 
@@ -35,6 +34,8 @@ export const Home = () => {
     dispatch(getIphones());
   }, [dispatch]);
 
+  if (!iphoneTypes.length) return <SimpleSpinner />;
+
   return (
     <Space
       direction="vertical"
@@ -44,11 +45,24 @@ export const Home = () => {
       size={[0, 48]}
     >
       <Layout>
-        <Header iphonesRender={iphones} />
-        <MyAllCards searchedIphones={iphones} />
-        <Footer style={footerStyle}>Footer</Footer>
+        <Header />
+
+        <div className="all-cards">
+          <div className="cards">
+            {iphoneTypes.map(({ typeKey, type, image }) => (
+              <TypeCard
+                onClick={() => navigate(typeKey)}
+                key={type}
+                title={type}
+                image={image}
+                defaultImage="https://asiastore.kg/image/cache/catalog/iphone/iphone14/iphone14/purple/wwen_iphone14_q422_purple_pdp_image_position-1a-670x540.jpg"
+              />
+            ))}
+          </div>
+        </div>
+
+        <Footer />
       </Layout>
     </Space>
   );
 };
-

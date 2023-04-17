@@ -1,2 +1,2 @@
-export * from "./Home";
-export * from "./Iphone";
+export * from "./home";
+export * from "./iphone";
