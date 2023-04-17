@@ -1,0 +1,16 @@
+.title {
+  display: flex;
+  justify-content: flex-end;
+  margin: 20px 100px;
+}
+
+.iphone-container {
+  margin-bottom: 20px;
+  display: flex;
+
+  .preview,
+  .filters {
+    width: 50%;
+    padding: 15px;
+  }
+}
