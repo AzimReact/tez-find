@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react";
+import { useMemo, useState } from "react";
 import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { Layout } from "antd";
@@ -8,8 +8,8 @@ import { Header, Footer, TypeCard } from "../../components/modules";
 
 export const Iphones = () => {
   const storeIphones = useSelector((store) => store.iphones);
-  const [color, setColor] = useState("");
-  const [memory, setMemory] = useState("");
+  const [color, setColor] = useState("ALL");
+  const [memory, setMemory] = useState("ALL");
   const { iphoneType } = useParams();
 
   const iphones = useMemo(() => {
@@ -25,15 +25,11 @@ export const Iphones = () => {
     return result;
   }, [storeIphones, iphoneType]);
 
-  useEffect(() => {
-    if (!iphones.length) return;
-    setColor(iphones[0].color);
-    setMemory(iphones[0].memory);
-  }, [iphones]);
-
   const filteredIphones = useMemo(() => {
     return iphones.filter(
-      (iphone) => iphone.color === color && iphone.memory === memory
+      (iphone) =>
+        (iphone.color === color || color === "ALL") &&
+        (iphone.memory === memory || memory === "ALL")
     );
   }, [iphones, color, memory]);
 
@@ -63,6 +59,7 @@ export const Iphones = () => {
         <div className={styles["filters"]}>
           <div className={styles["color-filter"]}>
             <select value={color} onChange={(e) => setColor(e.target.value)}>
+              <option value="ALL">All</option>
               {colorOptions.map((color, i) => (
                 <option key={color + i} value={color}>
                   {color}
@@ -71,7 +68,8 @@ export const Iphones = () => {
             </select>
           </div>
           <div className={styles["memory-filter"]}>
-            <select value={memory} onChange={(e) => setMemory(e.target.value)}>
+            <select value={memory} onChange={(e) => setMemory(+e.target.value)}>
+              <option value="ALL">All</option>
               {memoryOptions.map((memory, i) => (
                 <option key={memory + i} value={memory}>
                   {memory}
@@ -89,7 +87,8 @@ export const Iphones = () => {
                 image={iphone.image}
                 defaultImage="https://asiastore.kg/image/cache/catalog/iphone/iphone14/iphone14/purple/wwen_iphone14_q422_purple_pdp_image_position-1a-670x540.jpg"
               >
-                <span>Children...</span>
+                <div>Memory: {iphone.memory}</div>
+                <div>Color: {iphone.color}</div>
               </TypeCard>
             ))}
           </div>
