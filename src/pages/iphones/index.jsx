@@ -89,6 +89,8 @@ export const Iphones = () => {
               >
                 <div>Memory: {iphone.memory}</div>
                 <div>Color: {iphone.color}</div>
+                <div>Model: {iphone.model ?? '-'}</div>
+                <div>Price: <b>{iphone.price}</b></div>
               </TypeCard>
             ))}
           </div>
