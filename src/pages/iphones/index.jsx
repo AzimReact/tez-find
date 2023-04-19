@@ -1,30 +1,39 @@
-import { useMemo, useState } from "react";
-import { useSelector } from "react-redux";
+import { useEffect, useMemo, useState } from "react";
 import { useParams } from "react-router-dom";
 import { Layout } from "antd";
 
 import styles from "./styles.module.scss";
 import { Header, Footer, TypeCard } from "../../components/modules";
 import { COLOR_LIST, MEMORY_LIST } from "../../consts";
+import { getFieldOptionsByIphoneType, getIphonesByType } from "../../store";
 
 export const Iphones = () => {
-  const storeIphones = useSelector((store) => store.iphones);
   const [color, setColor] = useState("ALL");
   const [memory, setMemory] = useState("ALL");
+  const [iphones, setIphones] = useState([]);
+  const [colorOptions, setColorOptions] = useState([]);
+  const [memoryOptions, setMemoryOptions] = useState([]);
   const { iphoneType } = useParams();
 
-  const iphones = useMemo(() => {
-    const result = [];
+  useEffect(() => {
+    getIphones(iphoneType);
+    getOptions(iphoneType);
+  }, [iphoneType]);
 
-    for (const market in storeIphones[iphoneType]) {
-      storeIphones[iphoneType][market] = storeIphones[iphoneType][market].map(
-        (el) => ({ ...el, market })
-      );
-      result.push(...storeIphones[iphoneType][market]);
-    }
+  const getIphones = async (iphoneType) => {
+    const response = await getIphonesByType(iphoneType);
+    setIphones(response);
+  };
 
-    return result;
-  }, [storeIphones, iphoneType]);
+  const getOptions = async (iphoneType) => {
+    const [colorOptions, memoryOptions] = await Promise.all([
+      getFieldOptionsByIphoneType("color", iphoneType),
+      getFieldOptionsByIphoneType("memory", iphoneType),
+    ]);
+
+    setColorOptions(colorOptions);
+    setMemoryOptions(memoryOptions);
+  };
 
   const filteredIphones = useMemo(() => {
     return iphones.filter(
@@ -33,24 +42,6 @@ export const Iphones = () => {
         (iphone.memory === memory || memory === "ALL")
     );
   }, [iphones, color, memory]);
-
-  const colorOptions = useMemo(() => {
-    const result = {};
-    for (let iphone of iphones) {
-      result[iphone.color] = iphone.color;
-    }
-
-    return Object.values(result);
-  }, [iphones]);
-
-  const memoryOptions = useMemo(() => {
-    const result = {};
-    for (let iphone of iphones) {
-      result[iphone.memory] = iphone.memory;
-    }
-
-    return Object.values(result);
-  }, [iphones]);
 
   return (
     <Layout>

@@ -1,17 +1,58 @@
-import { applyMiddleware, combineReducers, createStore } from "redux";
-import { iphoneReducer } from "./iphonesReducer";
+import { fetchIphones } from "../services";
 
-const rootReducer = combineReducers({
-  iphones: iphoneReducer,
-});
+export const getIphonesRoot = async () => {
+  try {
+    const cache = JSON.parse(sessionStorage.getItem("IPHONES"));
+    if (cache) return cache;
+    const iphones = await fetchIphones();
+    sessionStorage.setItem("IPHONES", JSON.stringify(iphones));
+    return iphones;
+  } catch (error) {
+    console.log(error.message);
+  }
+};
 
-export const store = createStore(rootReducer, applyMiddleware(reduxThunk));
+export const getIphoneTypes = async () => {
+  const iphonesRoot = await getIphonesRoot();
 
-function reduxThunk(store) {
-  return (next) => {
-    return (action) => {
-      if (typeof action === "function") action(next, store);
-      else next(action);
-    };
-  };
+  const result = [];
+  for (const typeKey in iphonesRoot) {
+    let marketIphones = iphonesRoot[typeKey]["istore"]
+      ? iphonesRoot[typeKey]["istore"]
+      : iphonesRoot[typeKey]["asia-store"];
+
+    result.push({
+      type: marketIphones.at(-1).type,
+      typeKey: typeKey,
+      image: marketIphones.at(-1).image,
+    });
+  }
+
+  return result;
+};
+
+export const getIphonesByType = async (iphoneType) => {
+  const iphonesRoot = await getIphonesRoot();
+
+  const result = [];
+
+  for (const market in iphonesRoot[iphoneType]) {
+    iphonesRoot[iphoneType][market] = iphonesRoot[iphoneType][market].map(
+      (el) => ({ ...el, market })
+    );
+    result.push(...iphonesRoot[iphoneType][market]);
+  }
+
+  return result;
+};
+
+export const getFieldOptionsByIphoneType = async (fieldName, iphoneType) => {
+  const iphones = await getIphonesByType(iphoneType)
+  const result = {};
+
+  for (let iphone of iphones) {
+    result[iphone[fieldName]] = iphone[fieldName];
+  }
+
+  return Object.values(result);
 }

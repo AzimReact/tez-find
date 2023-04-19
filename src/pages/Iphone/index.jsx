@@ -1,14 +1,14 @@
 import { useEffect, useMemo, useState } from "react";
-import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { Layout } from "antd";
 
 import styles from "./styles.module.scss";
 import { Header, Footer } from "../../components/modules";
+import { getIphonesRoot } from "../../store";
 
 // FIXME: This page under construction !!!!
 export const Iphone = () => {
-  const storeIphones = useSelector((store) => store.iphones);
+  const storeIphones = getIphonesRoot();
   const [color, setColor] = useState("");
   const [memory, setMemory] = useState("");
   const { iphoneType } = useParams();

@@ -1,38 +1,24 @@
 import { Layout } from "antd";
-import { useDispatch, useSelector } from "react-redux";
-import { useEffect, useMemo } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 import styles from "./styles.module.scss";
-import { getIphones } from "../../store/actions";
 import { TypeCard, Header, Footer } from "../../components/modules";
 import { SimpleSpinner } from "../../components/ui";
+import { getIphoneTypes } from "../../store";
 
 export const Main = () => {
-  const storeIphones = useSelector((store) => ({ ...store.iphones }));
-  const dispatch = useDispatch();
+  const [iphoneTypes, setIphoneTypes] = useState([]);
   const navigate = useNavigate();
 
-  const iphoneTypes = useMemo(() => {
-    const result = [];
-    for (const typeKey in storeIphones) {
-      let marketIphones = storeIphones[typeKey]["istore"]
-        ? storeIphones[typeKey]["istore"]
-        : storeIphones[typeKey]["asia-store"];
-
-      result.push({
-        type: marketIphones.at(-1).type,
-        typeKey: typeKey,
-        image: marketIphones.at(-1).image,
-      });
-    }
-
-    return result;
-  }, [storeIphones]);
-
   useEffect(() => {
-    dispatch(getIphones());
-  }, [dispatch]);
+    getTypes();
+  }, []);
+
+  const getTypes = async () => {
+    const response = await getIphoneTypes();
+    setIphoneTypes(response);
+  };
 
   if (!iphoneTypes.length) return <SimpleSpinner />;
 
