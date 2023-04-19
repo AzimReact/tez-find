@@ -5,6 +5,7 @@ import { Layout } from "antd";
 
 import styles from "./styles.module.scss";
 import { Header, Footer, TypeCard } from "../../components/modules";
+import { COLOR_LIST, MEMORY_LIST } from "../../consts";
 
 export const Iphones = () => {
   const storeIphones = useSelector((store) => store.iphones);
@@ -62,7 +63,7 @@ export const Iphones = () => {
               <option value="ALL">All</option>
               {colorOptions.map((color, i) => (
                 <option key={color + i} value={color}>
-                  {color}
+                  {COLOR_LIST[color]}
                 </option>
               ))}
             </select>
@@ -72,7 +73,7 @@ export const Iphones = () => {
               <option value="ALL">All</option>
               {memoryOptions.map((memory, i) => (
                 <option key={memory + i} value={memory}>
-                  {memory}
+                  {MEMORY_LIST[memory]}
                 </option>
               ))}
             </select>
@@ -87,10 +88,12 @@ export const Iphones = () => {
                 image={iphone.image}
                 defaultImage="https://asiastore.kg/image/cache/catalog/iphone/iphone14/iphone14/purple/wwen_iphone14_q422_purple_pdp_image_position-1a-670x540.jpg"
               >
-                <div>Memory: {iphone.memory}</div>
-                <div>Color: {iphone.color}</div>
-                <div>Model: {iphone.model ?? '-'}</div>
-                <div>Price: <b>{iphone.price}</b></div>
+                <div>Memory: {MEMORY_LIST[iphone.memory]}</div>
+                <div>Color: {COLOR_LIST[iphone.color]}</div>
+                <div>Model: {iphone.model ?? "-"}</div>
+                <div>
+                  Price: <b>{iphone.price}</b>
+                </div>
               </TypeCard>
             ))}
           </div>

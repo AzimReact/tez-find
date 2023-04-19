@@ -1,0 +1,30 @@
+export const COLOR_LIST = {
+  "#4e4d4b": "Space Black",
+  "#665e71": "Deep Purple",
+  "#fae9d4": "Gold",
+  "#f0f2f1": "Silver",
+  "#fbf7f3": "Starlight",
+  "#e6ddea": "Light Purple",
+  "#bebdd4": "Purple",
+  "#a7b9ca": "Light Blue",
+  "#437691": "Blue",
+  "#f0d96c": "Yellow",
+  "#313840": "Midnight",
+  "#d53a43": "Red",
+  "#576856": "Alpine Green",
+  "#aec7dd": "Sierra Blue",
+  "#61605c": "Graphite",
+  "#fbe2dd": "Pink",
+  "#495c4a": "Green",
+  "#aee0cd": "Light Green",
+  "#1f2120": "Black",
+  "#faf6ef": "White",
+};
+
+export const MEMORY_LIST = {
+  64: "64 gb",
+  128: "128 gb",
+  256: "256 gb",
+  512: "512 gb",
+  1: "1 tb",
+};
