@@ -83,11 +83,18 @@ export const Iphones = () => {
           <div className={styles["cards"]}>
             {filteredIphones.map((iphone, i) => (
               <TypeCard
+                onClick={() => window.open(iphone.url)}
                 key={iphone.id}
                 title={iphone.title}
                 image={iphone.image}
                 defaultImage="https://asiastore.kg/image/cache/catalog/iphone/iphone14/iphone14/purple/wwen_iphone14_q422_purple_pdp_image_position-1a-670x540.jpg"
               >
+                <div>
+                  Market:
+                  <b>
+                    <i>{iphone.market}</i>
+                  </b>
+                </div>
                 <div>Memory: {MEMORY_LIST[iphone.memory]}</div>
                 <div>Color: {COLOR_LIST[iphone.color]}</div>
                 <div>Model: {iphone.model ?? "-"}</div>
