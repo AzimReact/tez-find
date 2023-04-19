@@ -2,10 +2,10 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.scss";
 
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { createHashRouter, RouterProvider } from "react-router-dom";
 import { Main, Iphones } from "./pages";
 
-const router = createBrowserRouter([
+const router = createHashRouter([
   {
     path: "/",
     element: <Main />,
