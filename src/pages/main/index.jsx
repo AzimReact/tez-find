@@ -8,7 +8,7 @@ import { getIphones } from "../../store/actions";
 import { TypeCard, Header, Footer } from "../../components/modules";
 import { SimpleSpinner } from "../../components/ui";
 
-export const Home = () => {
+export const Main = () => {
   const storeIphones = useSelector((store) => ({ ...store.iphones }));
   const dispatch = useDispatch();
   const navigate = useNavigate();

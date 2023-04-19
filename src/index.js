@@ -5,13 +5,13 @@ import "./index.scss";
 import { Provider } from "react-redux";
 import { store } from "./store";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import { Home } from "./pages/home/index";
+import { Main } from "./pages/main/index";
 import { Iphones } from "./pages/iphones/index";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Home />,
+    element: <Main />,
   },
   {
     path: "/:iphoneType",
