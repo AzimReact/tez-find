@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/tez-find/static/css/main.0d95e8bd.css",
+    "main.js": "/tez-find/static/js/main.02dcf58f.js",
+    "index.html": "/tez-find/index.html",
+    "main.0d95e8bd.css.map": "/tez-find/static/css/main.0d95e8bd.css.map",
+    "main.02dcf58f.js.map": "/tez-find/static/js/main.02dcf58f.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.0d95e8bd.css",
+    "static/js/main.02dcf58f.js"
+  ]
+}
