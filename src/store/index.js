@@ -21,6 +21,8 @@ export const getIphoneTypes = async () => {
       ? iphonesRoot[typeKey]["istore"]
       : iphonesRoot[typeKey]["asia-store"];
 
+    marketIphones = marketIphones ?? iphonesRoot[typeKey][Object.keys(iphonesRoot[typeKey]).at(0)] ?? []
+
     result.push({
       type: marketIphones.at(-1).type,
       typeKey: typeKey,
