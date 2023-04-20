@@ -43,6 +43,7 @@ export const Iphones = () => {
     );
   }, [iphones, color, memory]);
 
+  console.log(filteredIphones);
   return (
     <Layout>
       <Header />
@@ -91,6 +92,17 @@ export const Iphones = () => {
                 <div>Model: {iphone.model ?? "-"}</div>
                 <div>
                   Price: <b>{iphone.price}</b>
+                </div>
+                <div>
+                  <b
+                    className={
+                      iphone.isExist
+                        ? styles["isExistTrue"]
+                        : styles["isExistFalse"]
+                    }
+                  >
+                    {iphone.isExist ? "В наличии" : "Уточнить у владельцев"}
+                  </b>
                 </div>
               </TypeCard>
             ))}
