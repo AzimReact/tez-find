@@ -2,6 +2,7 @@ import React from "react";
 import { Input, Space } from "antd";
 import { Header as AntdHeader } from "antd/es/layout/layout";
 import styles from "./styles.module.scss";
+import { useNavigate } from "react-router-dom";
 
 const headerStyle = {
   textAlign: "center",
@@ -13,10 +14,13 @@ const headerStyle = {
 };
 
 export const Header = ({ onSearch: handleSearch }) => {
+  const navigate = useNavigate();
   return (
     <AntdHeader style={headerStyle}>
       <div className={styles["header"]}>
-        <h2>TezFind</h2>
+        <h2 className={styles["logo"]} onClick={() => navigate("/")}>
+          TezFind
+        </h2>
         <Space direction="vertical">
           <Input.Search
             placeholder="Введи свой телефон"
