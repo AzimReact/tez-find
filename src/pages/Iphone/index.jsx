@@ -38,7 +38,6 @@ export const Iphone = () => {
     );
   }, [iphones, color, memory]);
 
-  console.log("render", filteredIphones);
   // TODO:
   const colorOptions = useMemo(() => {
     const result = {};
