@@ -1,0 +1,26 @@
+@mixin absoluteCenter() {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@mixin areaEnlarger($w, $h) {
+  &:before {
+    content: '';
+    width: $w;
+    height: $h;
+    border-radius: .6rem;
+    //background: fade-out(gray, .7);
+    @include absoluteCenter;
+  }
+}
+
+@mixin fullBackground($color, $image, $size) {
+  background-color: $color;
+  background-image: url($image);
+  background-size: $size;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
