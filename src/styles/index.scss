@@ -1,0 +1,22 @@
+@import "colors";
+@import "typography";
+@import "mixins";
+
+* {
+  margin: 0;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+// Example how to use variables
+h1 {
+  color: var(--orange200)
+}
+
+img {
+  max-width: 100%;
+}

@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import "./index.scss";
+import "./styles/index.scss";
 
 import { createHashRouter, RouterProvider } from "react-router-dom";
 import { Main, Iphones } from "./pages";

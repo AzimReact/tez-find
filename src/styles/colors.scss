@@ -1,0 +1,205 @@
+:root {
+  --purple500: #430063;
+  --purple400: #640075;
+  --purple300: #A700B3;
+
+  --orange: #DE7200;
+  --orange600: #DD630A;
+  --orange500: #ED800D;
+  --orange400: #DD630A;
+  --orange300: #ED800D;
+  --orange200: #EFB325;
+  --orange100: #F7CD34;
+  --orange50: #FBE699;
+
+  --wine600: #170019;
+  --wine500: #2B0030;
+  --wine200: #5C3560;
+  --wine100: #A591A7;
+
+  --red400: #932020;
+  --red300: #B73939;
+  --red100: #EC4E4E;
+  --red20: #F4E9E9;
+
+  --green300: #4DA23F;
+  --green100: #4FBF67;
+
+  --blue100: #3862CE;
+
+  --gray500: #808191;
+  --gray300: #B8B9C1;
+  --gray200: #E4E4E4;
+  --gray150: #CBD4DD;
+  --gray100: #F1F1F1;
+  --gray50: #F5F5F5;
+  --gray30: #F8F8F8;
+
+  --white: #FFFFFF;
+  --dark500: #11142D;
+  --dark400: #414357;
+  --dark300: #5E5F70;
+}
+
+// https://codepen.io/sosuke/pen/Pjoqqp - CSS filter generator, used for icons recolor
+$filter-text100: invert(5%) sepia(49%) saturate(2473%) hue-rotate(219deg) brightness(95%) contrast(96%);
+$filter-day-text80: invert(39%) sepia(4%) saturate(1818%) hue-rotate(199deg) brightness(88%) contrast(79%);
+$filter-night-text80: invert(81%) sepia(6%) saturate(443%) hue-rotate(198deg) brightness(87%) contrast(89%);
+$filter-day-text60: invert(53%) sepia(6%) saturate(722%) hue-rotate(199deg) brightness(95%) contrast(89%);
+$filter-night-text60: invert(75%) sepia(8%) saturate(470%) hue-rotate(199deg) brightness(85%) contrast(86%);
+$filter-day-ui500: invert(51%) sepia(5%) saturate(938%) hue-rotate(199deg) brightness(99%) contrast(90%);
+$filter-night-ui500: invert(63%) sepia(9%) saturate(481%) hue-rotate(199deg) brightness(95%) contrast(82%);
+$filter-day-ui300: invert(86%) sepia(3%) saturate(446%) hue-rotate(196deg) brightness(89%) contrast(83%);
+$filter-night-ui300: invert(43%) sepia(10%) saturate(463%) hue-rotate(198deg) brightness(94%) contrast(86%);
+$filter-red300: invert(25%) sepia(86%) saturate(1494%) hue-rotate(335deg) brightness(90%) contrast(87%);
+$filter-orange300: invert(56%) sepia(89%) saturate(1768%) hue-rotate(354deg) brightness(94%) contrast(97%);
+$filter-white: invert(100%) sepia(0%) saturate(4401%) hue-rotate(34deg) brightness(128%) contrast(109%);
+$filter-violet: invert(10%) sepia(81%) saturate(5397%) hue-rotate(280deg) brightness(61%) contrast(110%);
+$filter-wine: invert(64%) sepia(9%) saturate(543%) hue-rotate(247deg) brightness(92%) contrast(90%);
+$filter-blue50: invert(52%) sepia(72%) saturate(1577%) hue-rotate(200deg) brightness(100%) contrast(102%);
+
+body {
+  &[theme="light"] {
+    // Components colors
+    --backgroundFrame: #FFFFFF;
+    --backgroundModal: #FFFFFF;
+    --backgroundActionMenu: #FFFFFF;
+    --backgroundMute: rgba(24, 10, 31, 0.7);
+
+    --ui500: #808191;
+    --ui300: #B8B9C1;
+    --ui200: #E4E4E4;
+    --ui100: #F1F1F1;
+    --ui50: #F5F5F5;
+    --ui30: #F8F8F8;
+    --ui25: #FAFAFA;
+
+    --card1Back: #FFFFFF;
+    --card1Border: #F8F8F8;
+
+    --card2Back: #FAFAFA;
+    --card2Border: #F1F1F1;
+
+    --buttonMainDef1: #640075;
+    --buttonMainDef2: #ED800D;
+    --buttonMainHover1: #430063;
+    --buttonMainHover2: #DD630A;
+    --buttonMainDisabled: #A591A7;
+
+    --buttonSecondaryDef: #640075;
+    --buttonSecondaryHover: #430063;
+    --buttonSecondaryDisabled: #A591A7;
+    --buttonSecondaryBack: #FFFFFF;
+    --buttonSecondaryBackHover: #F5F5F5;
+
+    --switcherOnDef: #640075;
+    --switcherOnHover: #430063;
+    --switcherOnDisabled: #A591A7;
+
+    --switcherOffDef: #98A9BC;
+    --switcherOffHover: #7F97B1;
+    --switcherOffDisabled: #CBD4DD;
+
+    --switcherBorder: #F1F1F1;
+    --switcherBorderHover: #E4E4E4;
+    --switcherBack: #F5F5F5;
+
+    --inputBack: #F8F8F8;
+    --inputBorderHover: #B8B9C1;
+    --inputBorderFocus: #640075;
+
+    --text100: #11142D;
+    --text90: #414357;
+    --text80: #5E5F70;
+    --text60: #808191;
+    --text30: #B8B9C1;
+    --textAccent: #430063;
+    --textAccent2: #5C3560;
+
+    --mainTabsDef: #11142D;
+    --mainTabsHover: #5C3560;
+    --mainTabsFocus: #430063;
+    --mainTabsDef2: #808191;
+    --mainTabsDef3: #414357;
+
+    --sidebarBack: #2B0030;
+    --sidebarRow: #210024;
+    --sidebarBar: #170019;
+    --sidebarHelp: #5C3560;
+    --sidebarHelpHover: #A591A7;
+
+    --botlistHover: #808191;
+  }
+
+  &[theme="dark"] {
+    // Components colors
+    --backgroundFrame: #1F2128;
+    --backgroundModal: #242731;
+    --backgroundActionMenu: #3A3D47;
+    --backgroundMute: rgba(15, 15, 16, 0.7);
+
+    --ui500: #9596A7;
+    --ui300: #6B6C79;
+    --ui200: #3A3D47;
+    --ui100: #3A3D47;
+    --ui50: #3A3F53;
+    --ui30: #292C35;
+    --ui25: #25272F;
+
+    --card1Back: #2A2D39;
+    --card1Border: #3A3D47;
+
+    --card2Back: #2A2D39;
+    --card2Border: #3A3D47;
+
+    --buttonMainDef1: #803588;
+    --buttonMainDef2: #ED800D;
+    --buttonMainHover1: #5E1976;
+    --buttonMainHover2: #DD630A;
+    --buttonMainDisabled: #A591A7;
+
+    --buttonSecondaryDef: #E4E4E4;
+    --buttonSecondaryHover: #FFFFFF;
+    --buttonSecondaryDisabled: #9596A7;
+    --buttonSecondaryBack: #3A3F53;
+    --buttonSecondaryBackHover: #3A3F53;
+
+    --switcherOnDef: #ED800D;
+    --switcherOnHover: #DD630A;
+    --switcherOnDisabled: #A591A7;
+
+    --switcherOffDef: #CBD4DD;
+    --switcherOffHover: #E4E4E4;
+    --switcherOffDisabled: #828998;
+
+    --switcherBorder: #5B5E69;
+    --switcherBorderHover: #9596A7;
+    --switcherBack: #3A3F53;
+
+    --inputBack: #292C35;
+    --inputBorderHover: #3A3D47;
+    --inputBorderFocus: #EFB325;
+
+    --text100: #FFFFFF;
+    --text90: #9596A7;
+    --text80: #9B9CAD;
+    --text60: #9D9EAF;
+    --text30: #6B6C79;
+    --textAccent: #FFFFFF;
+    --textAccent2: #9596A7;
+
+    --mainTabsDef: #9596A7;
+    --mainTabsHover: #B4B5C0;
+    --mainTabsFocus: #FFFFFF;
+    --mainTabsDef2: #9D9EAF;
+    --mainTabsDef3: #B4B5C0;
+
+    --sidebarBack: #2A2D39;
+    --sidebarRow: #23262F;
+    --sidebarBar: #3F424D;
+    --sidebarHelp: #3F424D;
+    --sidebarHelpHover: rgba(255, 255, 255, 0.3);
+
+    --botlistHover: #FFFFFF;
+  }
+}
