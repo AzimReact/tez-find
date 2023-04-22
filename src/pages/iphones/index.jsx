@@ -92,6 +92,17 @@ export const Iphones = () => {
                 <div>
                   Price: <b>{iphone.price}</b>
                 </div>
+                <div>
+                  <b
+                    className={
+                      iphone.isExist
+                        ? styles["isExistTrue"]
+                        : styles["isExistFalse"]
+                    }
+                  >
+                    {iphone.isExist ? "В наличии" : "Уточнить у владельцев"}
+                  </b>
+                </div>
               </TypeCard>
             ))}
           </div>
