@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@600;700&display=swap');
+
+html {
+  font-size: 10px;
+
+  @media screen and (max-width: 1440px){
+    font-size: 9px;
+  }
+
+  @media screen and (max-width: 1280px){
+    font-size: 8px;
+  }
+
+  @media screen and (max-height: 720px) and (min-width: 721px){
+    font-size: 8px;
+  }
+
+  @media (max-width: 720px) {
+    font-size: 10px;
+  }
+}
+
+* {
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  text-decoration: none;
+}
+
+h1,h2,h3,h4,h5,
+.h1,.h2,.h3,.h4,.h5 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+}
+
+h1, .h1 {
+  font-size: 1.8rem;
+  line-height: 2.2rem;
+}
+
+h2, .h2 {
+  font-size: 1.6rem;
+  line-height: 2.2rem;
+}
+
+h3, .h3 {
+  font-size: 1.4rem;
+  line-height: 2.0rem;
+}
+
+h4, .h4 {
+  font-size: 1.3rem;
+  line-height: 1.8rem;
+}
+
+h5, .h5 {
+  font-size: 1.2rem;
+  line-height: 1.8rem;
+}
+
+.label {
+  font-weight: 700;
+  font-size: 1.0rem;
+  line-height: 1.2rem;
+  letter-spacing: .06rem;
+  text-transform: uppercase;
+}
+
+.label-min {
+  font-weight: 700;
+  font-size: .7rem;
+  line-height: .8rem;
+  letter-spacing: .06rem;
+  text-transform: uppercase;
+}
+
+.sub1 {
+  font-weight: 600;
+  font-size: 1.0rem;
+  line-height: 1.8rem;
+  letter-spacing: .1rem;
+  text-transform: uppercase;
+}
+
+.sub2 {
+  font-weight: 600;
+  font-size: 1.2rem;
+  line-height: 1.8rem;
+  letter-spacing: .06rem;
+  text-transform: uppercase;
+}
+
+.txt1 {
+  font-weight: 400;
+  font-size: 1.2rem;
+  line-height: 2.0rem;
+}
+
+.txt2 {
+  font-weight: 600;
+  font-size: 1.1rem;
+  line-height: 2.4rem;
+  letter-spacing: .06rem;
+  text-transform: uppercase;
+}
+
+.txt3 {
+  font-weight: 400;
+  font-size: 1.4rem;
+  line-height: 2.0rem;
+}
+
+.txt-min {
+  font-weight: 400;
+  font-size: 1.1rem;
+  line-height: 1.6rem;
+}
+
+.btn {
+  font-weight: 600;
+  font-size: 1.4rem;
+  line-height: 2.4rem;
+  text-align: center;
+  letter-spacing: .04rem;
+}
+
+.regular {
+  font-weight: 400;
+}
+.medium {
+  font-weight: 500;
+}
+.semi {
+  font-weight: 600;
+}
+.bold {
+  font-weight: 700;
+}
