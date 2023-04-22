@@ -43,7 +43,6 @@ export const Iphones = () => {
     );
   }, [iphones, color, memory]);
 
-  console.log(filteredIphones);
   return (
     <Layout>
       <Header />
