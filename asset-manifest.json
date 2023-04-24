@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/tez-find/static/css/main.44748472.css",
-    "main.js": "/tez-find/static/js/main.5ff559f3.js",
+    "main.css": "/tez-find/static/css/main.45199474.css",
+    "main.js": "/tez-find/static/js/main.39ee8203.js",
     "index.html": "/tez-find/index.html",
-    "main.44748472.css.map": "/tez-find/static/css/main.44748472.css.map",
-    "main.5ff559f3.js.map": "/tez-find/static/js/main.5ff559f3.js.map"
+    "main.45199474.css.map": "/tez-find/static/css/main.45199474.css.map",
+    "main.39ee8203.js.map": "/tez-find/static/js/main.39ee8203.js.map"
   },
   "entrypoints": [
-    "static/css/main.44748472.css",
-    "static/js/main.5ff559f3.js"
+    "static/css/main.45199474.css",
+    "static/js/main.39ee8203.js"
   ]
 }
