@@ -13,7 +13,7 @@ const headerStyle = {
   backgroundColor: "#7dbcea",
 };
 
-export const Header = ({ onSearch: handleSearch }) => {
+export const OldHeader = ({ onSearch: handleSearch }) => {
   const navigate = useNavigate();
   return (
     <AntdHeader style={headerStyle}>
