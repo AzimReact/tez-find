@@ -3,10 +3,9 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 import styles from "./styles.module.scss";
-import { TypeCard, Footer } from "../../components/modules";
+import { TypeCard, Footer, Header } from "../../components/modules";
 import { SimpleSpinner } from "../../components/ui";
 import { getIphoneTypes } from "../../store";
-import Header from "../../components/modules/header";
 
 export const Main = () => {
   const [iphoneTypes, setIphoneTypes] = useState([]);

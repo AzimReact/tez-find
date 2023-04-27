@@ -1,69 +1,71 @@
-span {
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 20px;
-}
+// TODO: Create Button component
 button {
-  padding: 12px 16px 12px 14px;
-  background-color: #fc0;
+  padding: 1.2rem 1.7rem;
+  background-color: var(--orange100);
   border: solid transparent;
   cursor: pointer;
 }
 
 .header {
-  background-color: white;
-}
-
-.container {
-  margin: 0 auto;
-  width: 93%;
-  max-width: 1339.2px;
-}
-
-.header__content {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 15px 0;
-}
-
-.logo {
-  width: 180px;
-  cursor: pointer;
-  margin-right: 25px;
-}
-.catalogSearch {
+  padding: 2rem 5rem;
   display: flex;
   align-items: center;
-  gap: 15px;
-}
-.catalogBtn {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 10px;
-  border-radius: 7px;
-}
-.menuIcon {
-  width: 18px;
-}
-.catalog__content {
-  display: none;
-}
 
-.input__wrapper {
-  border: 2px solid #fc0;
-}
+  .logo {
+    width: 18rem;
+    cursor: pointer;
+    margin-right: 6rem;
+  }
 
-.inp {
-  width: 450px;
-  height: 40px;
-  border: none;
-  outline: none;
-  padding: 0px 15px;
-}
-.inp::placeholder {
-  font-size: 16px;
+  .navigation {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+
+    .catalogBtn {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      border-radius: 7px;
+
+      .menuIcon {
+        width: 1.6rem;
+      }
+    }
+
+    .catalog__content {
+      display: none;
+    }
+
+    .search__wrapper {
+      border: 2px solid var(--orange100);
+      height: 5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      & > .search__input_container {
+        height: 100%;
+        width: 50rem;
+        padding: 0px 15px;
+        border-radius: none;
+
+        & > input {
+          font-weight: 400;
+          font-size: 1.4rem;
+          line-height: 2rem;
+        }
+      }
+
+      & > button {
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+  }
 }
 
 .favorites {
@@ -71,13 +73,15 @@ button {
   flex-direction: column;
   align-items: center;
   cursor: pointer;
-  & > .text {
-    color: gray;
-    font-size: 13px;
+  margin: 0 auto;
+
+  & > span {
+    color: var(--gray500);
   }
 }
 
 .loginBtn {
-  background-color: #e8e8e8;
+  margin-left: auto;
+  background-color: var(--gray125);
   border-radius: 7px;
 }

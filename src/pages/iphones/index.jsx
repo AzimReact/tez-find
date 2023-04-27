@@ -3,10 +3,9 @@ import { useParams } from "react-router-dom";
 import { Layout } from "antd";
 
 import styles from "./styles.module.scss";
-import { Footer, TypeCard } from "../../components/modules";
+import { Footer, TypeCard, Header } from "../../components/modules";
 import { COLOR_LIST, MEMORY_LIST } from "../../consts";
 import { getFieldOptionsByIphoneType, getIphonesByType } from "../../store";
-import Header from "../../components/modules/header";
 
 export const Iphones = () => {
   const [color, setColor] = useState("ALL");
