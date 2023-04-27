@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import { Layout } from "antd";
 
 import styles from "./styles.module.scss";
-import { Header, Footer } from "../../components/modules";
+import { Footer, Header } from "../../components/modules";
 import { getIphonesRoot } from "../../store";
 
 // FIXME: This page under construction !!!!

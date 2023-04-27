@@ -1,0 +1,87 @@
+// TODO: Create Button component
+button {
+  padding: 1.2rem 1.7rem;
+  background-color: var(--orange100);
+  border: solid transparent;
+  cursor: pointer;
+}
+
+.header {
+  padding: 2rem 5rem;
+  display: flex;
+  align-items: center;
+
+  .logo {
+    width: 18rem;
+    cursor: pointer;
+    margin-right: 6rem;
+  }
+
+  .navigation {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+
+    .catalogBtn {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      border-radius: 7px;
+
+      .menuIcon {
+        width: 1.6rem;
+      }
+    }
+
+    .catalog__content {
+      display: none;
+    }
+
+    .search__wrapper {
+      border: 2px solid var(--orange100);
+      height: 5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      & > .search__input_container {
+        height: 100%;
+        width: 50rem;
+        padding: 0px 15px;
+        border-radius: none;
+
+        & > input {
+          font-weight: 400;
+          font-size: 1.4rem;
+          line-height: 2rem;
+        }
+      }
+
+      & > button {
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+  }
+}
+
+.favorites {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  margin: 0 auto;
+
+  & > span {
+    color: var(--gray500);
+  }
+}
+
+.loginBtn {
+  margin-left: auto;
+  background-color: var(--gray125);
+  border-radius: 7px;
+}
